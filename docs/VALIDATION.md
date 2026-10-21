@@ -20,6 +20,14 @@ The benchmark file is generated from real executions, not an invented performanc
 
 GitHub's [Validation](https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/workflows/validate.yml), [CodeQL](https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/workflows/codeql.yml) and [portable release](https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/workflows/release.yml) runs provide commit-specific cross-platform evidence. Release notes record the exact accepted commit and completed runs. A workflow definition is not itself evidence of a successful run.
 
+## Completed hosted checks
+
+The initial published implementation, commit `38d6d5154a9b5e9801b31c7a4845a697b9d0d356`, passed [all ten Validation jobs](https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/39535915514) and [all three CodeQL analyses](https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/39535915504) on 2026-10-21 UTC. Open CodeQL alerts were separately queried: zero at review time. Linux, Windows and macOS actual portable-app smoke tests passed, as did Clang ASan/UBSan and the three-browser suite. Each of the four model matrix jobs passed 591 tests; Python coverage was 99.67%.
+
+GCC instrumentation of `native/core.cpp` and `native/cli.cpp` measured **98.6% lines (210/213), 100% functions (10/10), and 69.6% branches (188/270)**. The enforced native gate is line coverage, not an undisclosed branch-coverage claim; exception/control-flow branches remain incompletely explored. The hosted Python 3.12 model suite took about 153 seconds on its runner; the Windows matrix suite took about 40 seconds. These are whole-suite times, not solver performance comparisons.
+
+These results precede this documentation-only evidence update. The release gate must still require fresh successful checks on the exact final source commit; the release notes link those final runs. Initial success is not used as a substitute for that check. No source/CI defect required suppression or a relaxed gate, and the repository created zero Actions artifacts and caches.
+
 ## Strategy and independent oracles
 
 - All 324 built-in control combinations use the actual C++ subprocess and independently structured Python implementation. Every output number is compared with relative tolerance `1e-10`, absolute `1e-8`.
