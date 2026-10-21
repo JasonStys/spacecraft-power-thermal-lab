@@ -1,0 +1,7 @@
+# Native readability policy by Jason Stys; formatting never changes model semantics.
+BasedOnStyle: LLVM
+ColumnLimit: 100
+IndentWidth: 2
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false

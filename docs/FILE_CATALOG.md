@@ -1,0 +1,72 @@
+# File catalog
+
+Every tracked-intent file; dependencies/private outputs are excluded.
+
+- `.clang-format` — # Native readability policy by Jason Stys; formatting never changes model semantics.
+- `.gitattributes` — Normalize source text to LF and preserve binary screenshot assets.
+- `.github/workflows/codeql.yml` — # Security analysis by Jason Stys. Jobs: C++, Python and JavaScript/TypeScript CodeQL.
+- `.github/workflows/release.yml` — # Manual draft-release packaging by Jason Stys. Never publishes automatically.
+- `.github/workflows/validate.yml` — # Validation by Jason Stys. Jobs: model contracts, browser integration, portable native smoke.
+- `.gitignore` — Exclude dependencies, runtime/private data, histories and generated builds from Git.
+- `.prettierignore` — Exclude generated indexes, locks and build/dependency trees from formatting.
+- `.prettierrc.json` — Shared readable browser/configuration/Markdown formatting options.
+- `CMakeLists.txt` — C++20 warning-as-error, test, sanitizer, coverage and static Windows runtime targets.
+- `LICENSE` — MIT License
+- `README.md` — # Spacecraft Power Thermal Lab
+- `SECURITY.md` — # Security policy
+- `docs/API.md` — # Strict input and interface contracts
+- `docs/ARCHITECTURE.md` — # Architecture and trade-offs
+- `docs/MODEL.md` — # Model, units and interpretation
+- `docs/RELEASE.md` — # Release and operations runbook
+- `docs/THIRD_PARTY.md` — # Notices and scientific references
+- `docs/USER_GUIDE.md` — # HELIO user guide
+- `docs/VALIDATION.md` — # Validation and evidence
+- `docs/images/overview.jpg` — Binary screenshot asset from local application validation
+- `docs/images/workbench.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/benchmark.json` — Reviewed numerical metric contracts, tolerance checked across compilers/platforms.
+- `examples/illumination.json` — Editable strict synthetic SI environment and spacecraft parameter profile.
+- `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
+- `licenses/PYTHON.txt` — A. HISTORY OF THE SOFTWARE
+- `native/cli.cpp` — // Fixed stdin-only simulation worker by Jason Stys; run/main/bytes: docs/CODE_INDEX.md.
+- `native/core.cpp` — // Original bounded power allocation and lumped thermal integration by Jason Stys.
+- `native/core.hpp` — // Coupled finite educational model by Jason Stys; fields/functions: docs/CODE_INDEX.md.
+- `native/tests.cpp` — // Hand-derived and hostile-envelope native contracts by Jason Stys; index: docs/CODE_INDEX.md.
+- `package-lock.json` — Resolved npm dependency graph with download integrity values.
+- `package.json` — Pinned browser dependencies, Node version contract and build/test/audit scripts.
+- `playwright.config.ts` — /** Three-engine real service/native acceptance by Jason Stys; variables: docs/CODE_INDEX.md.
+- `powerlab/__init__.py` — """Offline power/thermal education by Jason Stys; no live hardware, credentials or cloud runtime."""
+- `powerlab/__main__.py` — """Local application launcher and explicit evidence exports by Jason Stys.
+- `powerlab/engine.py` — """Invented cases, cross-language agreement and evidence summaries by Jason Stys.
+- `powerlab/model.py` — """Strict SI parameter/profile contracts by Jason Stys.
+- `powerlab/native.py` — """Fixed native worker orchestration by Jason Stys.
+- `powerlab/reference.py` — """Independent dictionary-based electrical/thermal reference by Jason Stys.
+- `powerlab/reports.py` — """Deterministic inert reports and opt-in immutable SQLite history by Jason Stys.
+- `powerlab/resources/history.sql` — -- Immutable local simulation history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
+- `powerlab/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
+- `pyproject.toml` — Python metadata, supported runtimes, strict lint/type/test and coverage gates.
+- `requirements-dev.in` — Scientific test, type, style, audit and packaging dependency inputs.
+- `requirements-dev.lock` — Universal pinned development/build graph with distribution hashes.
+- `requirements.in` — Standard-library-only Python runtime declaration (no third-party runtime packages).
+- `requirements.lock` — Empty runtime lock: this service uses only the CPython standard library.
+- `tests/test_engine.py` — """Cross-language, analytic, conservation and policy tests by Jason Stys.
+- `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
+- `tests/test_model.py` — """Strict numeric envelopes and worker failure boundaries by Jason Stys.
+- `tests/ui.spec.ts` — /** Actual native/service/browser acceptance by Jason Stys; test/variable lines: docs/CODE_INDEX.md.
+- `tools/benchmark.py` — """Reviewed numerical contracts and descriptive runtime observations by Jason Stys.
+- `tools/build_native.py` — """Cross-platform C++ build/test orchestration by Jason Stys.
+- `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
+- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
+- `tools/smoke_app.py` — """Execute owned frozen application acceptance checks by Jason Stys.
+- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
+- `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
+- `vitest.config.ts` — /** Pure display-logic tests by Jason Stys; configuration inventory: docs/CODE_INDEX.md. */
+- `web/contracts.test.ts` — /** Pure presentation and hostile-envelope contracts by Jason Stys; test/variable lines: docs/CODE_INDEX.md. */
+- `web/contracts.ts` — /** Typed presentation contracts by Jason Stys; functions/types/variables: docs/CODE_INDEX.md.
+- `web/env.d.ts` — /** Vite static asset typing by Jason Stys; reference declarations: docs/CODE_INDEX.md. */
+- `web/index.html` — <!-- Local HELIO browser shell by Jason Stys. Region/IDs and bootstrap: docs/CODE_INDEX.md. -->
+- `web/main.ts` — /** HELIO local power/thermal interface by Jason Stys.
+- `web/style.css` — /* HELIO responsive scientific interface by Jason Stys. Selectors/variables: docs/CODE_INDEX.md. */
+- `web/vite.config.ts` — /** Local production asset build by Jason Stys. Configuration variables: docs/CODE_INDEX.md. */
+- `docs/CODE_INDEX.md` — Generated exact-line source inventory.
+- `docs/FILE_CATALOG.md` — This generated complete file index.

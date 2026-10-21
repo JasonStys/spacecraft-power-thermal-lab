@@ -1,0 +1,205 @@
+{
+  "absolute_tolerance": 1e-06,
+  "cases": [
+    {
+      "sample_count": 300,
+      "scenario": "day-night-cycle",
+      "totals": {
+        "battery_loss_wh": 1.175925926,
+        "duration_s": 1500,
+        "final_soc": 0.662268519,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 287.918533605,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.6,
+        "min_temperature_k": 285.0,
+        "outside_limit_samples": 0,
+        "science_served_wh": 7.5,
+        "science_shed_wh": 0.0,
+        "served_wh": 10.833333333,
+        "solar_wh": 19.054,
+        "spill_wh": 4.554,
+        "unserved_wh": 0.0
+      }
+    },
+    {
+      "sample_count": 540,
+      "scenario": "extended-eclipse",
+      "totals": {
+        "battery_loss_wh": 2.74,
+        "duration_s": 2700,
+        "final_soc": 0.03375,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 290.019038952,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.0,
+        "min_temperature_k": 285.0,
+        "outside_limit_samples": 0,
+        "science_served_wh": 19.837777778,
+        "science_shed_wh": 0.0,
+        "served_wh": 24.993333333,
+        "solar_wh": 6.351333333,
+        "spill_wh": 1.268,
+        "unserved_wh": 6.256666667
+      }
+    },
+    {
+      "sample_count": 240,
+      "scenario": "payload-surge",
+      "totals": {
+        "battery_loss_wh": 0.958962963,
+        "duration_s": 1200,
+        "final_soc": 0.479009259,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 293.477184874,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.479009259,
+        "min_temperature_k": 285.0,
+        "outside_limit_samples": 0,
+        "science_served_wh": 18.333333333,
+        "science_shed_wh": 0.0,
+        "served_wh": 21.0,
+        "solar_wh": 19.054,
+        "spill_wh": 1.934666667,
+        "unserved_wh": 0.0
+      }
+    },
+    {
+      "sample_count": 240,
+      "scenario": "cold-start",
+      "totals": {
+        "battery_loss_wh": 1.037037037,
+        "duration_s": 1200,
+        "final_soc": 0.578240741,
+        "heater_served_wh": 2.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 254.21036128,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.465740741,
+        "min_temperature_k": 250.0,
+        "outside_limit_samples": 240,
+        "science_served_wh": 5.0,
+        "science_shed_wh": 0.0,
+        "served_wh": 9.666666667,
+        "solar_wh": 12.702666667,
+        "spill_wh": 2.869333333,
+        "unserved_wh": 0.0
+      }
+    },
+    {
+      "sample_count": 240,
+      "scenario": "hot-soak",
+      "totals": {
+        "battery_loss_wh": 1.0,
+        "duration_s": 1200,
+        "final_soc": 0.825,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 326.138435743,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.6,
+        "min_temperature_k": 310.0,
+        "outside_limit_samples": 93,
+        "science_served_wh": 11.666666667,
+        "science_shed_wh": 0.0,
+        "served_wh": 14.333333333,
+        "solar_wh": 37.333333333,
+        "spill_wh": 13.0,
+        "unserved_wh": 0.0
+      }
+    },
+    {
+      "sample_count": 160,
+      "scenario": "battery-full",
+      "totals": {
+        "battery_loss_wh": 0.0,
+        "duration_s": 800,
+        "final_soc": 1.0,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 285.290887284,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 1.0,
+        "min_temperature_k": 285.0,
+        "outside_limit_samples": 0,
+        "science_served_wh": 0.0,
+        "science_shed_wh": 0.0,
+        "served_wh": 1.777777778,
+        "solar_wh": 16.936888889,
+        "spill_wh": 15.159111111,
+        "unserved_wh": 0.0
+      }
+    },
+    {
+      "sample_count": 240,
+      "scenario": "battery-empty",
+      "totals": {
+        "battery_loss_wh": 0.5,
+        "duration_s": 1200,
+        "final_soc": 0.1125,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 285.0,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.0,
+        "min_temperature_k": 282.771760281,
+        "outside_limit_samples": 0,
+        "science_served_wh": 2.5,
+        "science_shed_wh": 0.0,
+        "served_wh": 3.833333333,
+        "solar_wh": 12.702666667,
+        "spill_wh": 3.869333333,
+        "unserved_wh": 3.833333333
+      }
+    },
+    {
+      "sample_count": 240,
+      "scenario": "isolated-cooling",
+      "totals": {
+        "battery_loss_wh": 0.0,
+        "duration_s": 1200,
+        "final_soc": 0.6,
+        "heater_served_wh": 0.0,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 340.0,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.6,
+        "min_temperature_k": 288.204078938,
+        "outside_limit_samples": 74,
+        "science_served_wh": 0.0,
+        "science_shed_wh": 0.0,
+        "served_wh": 0.0,
+        "solar_wh": 0.0,
+        "spill_wh": 0.0,
+        "unserved_wh": 0.0
+      }
+    },
+    {
+      "sample_count": 120,
+      "scenario": "heater-contention",
+      "totals": {
+        "battery_loss_wh": 0.0,
+        "duration_s": 600,
+        "final_soc": 0.0,
+        "heater_served_wh": 0.533333333,
+        "max_electric_residual_w": 0.0,
+        "max_temperature_k": 250.0,
+        "max_thermal_residual_w": 0.0,
+        "min_soc": 0.0,
+        "min_temperature_k": 249.789759394,
+        "outside_limit_samples": 120,
+        "science_served_wh": 0.0,
+        "science_shed_wh": 0.0,
+        "served_wh": 1.866666667,
+        "solar_wh": 1.866666667,
+        "spill_wh": 0.0,
+        "unserved_wh": 2.966666667
+      }
+    }
+  ],
+  "relative_tolerance": 1e-08,
+  "schema": 1
+}
