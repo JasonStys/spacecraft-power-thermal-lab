@@ -17,6 +17,26 @@ test("actual numerical evidence and interval replay", async ({ page }) => {
   await expect(page.getByLabel("Display °C")).toBeFocused();
   await expect(page.locator("#state")).toContainText("°C");
 });
+test("load service separates requested deficits from intentional science shedding", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("#evidence")).toBeVisible();
+  await expect(page.locator("#service-review details")).toHaveCount(3);
+  await expect(page.locator("#service-review")).toContainText("Intentional science shedding");
+  await page.locator("#scenario").selectOption("heater-contention");
+  await expect(page.locator("#status")).toContainText("Verified");
+  await page.locator("#service-review summary").nth(1).click();
+  await expect(page.locator("#service-review details").nth(1)).toContainText("unserved");
+  const run = await (await request.get("/api/run?scenario=heater-contention")).json();
+  expect(
+    run.service.components.reduce(
+      (sum: number, row: { unserved_wh: number }) => sum + row.unserved_wh,
+      0,
+    ),
+  ).toBeCloseTo(run.totals.unserved_wh, 7);
+});
 test("reserve-aware policy quantifies science sacrificed", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#evidence")).toBeVisible();

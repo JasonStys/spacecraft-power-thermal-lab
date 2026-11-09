@@ -90,6 +90,28 @@ export interface Report {
   settings: Settings;
   totals: Totals;
   samples: Sample[];
+  service: {
+    components: {
+      name: string;
+      requested_wh: number;
+      served_wh: number;
+      unserved_wh: number;
+      interruptions: {
+        start_s: number;
+        end_s: number;
+        energy_wh: number;
+        peak_w: number;
+        right_censored: boolean;
+      }[];
+    }[];
+    science_shedding: {
+      start_s: number;
+      end_s: number;
+      energy_wh: number;
+      peak_w: number;
+      right_censored: boolean;
+    }[];
+  };
   provenance: Record<string, string>;
   limitations: string[];
 }

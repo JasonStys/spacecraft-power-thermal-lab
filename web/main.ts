@@ -123,6 +123,34 @@ function render(): void {
       .join(
         "",
       )}</div><section class="panel"><div class="section-head"><div><p class="eyebrow">02 / COUPLED STATE REPLAY</p><h2>Light changes. The budget follows.</h2></div><label class="toggle"><input id="celsius" type="checkbox" ${celsius ? "checked" : ""}>Display °C</label></div><p>Each record contains interval-average flows and the state at its end. Curves connect simulated samples—not continuous extrema. All stored temperatures remain kelvin.</p><div class="replay"><button id="previous" aria-label="Previous interval">←</button><label for="sample">Interval ending <output id="time-label"></output></label><input id="sample" type="range" min="0" max="${r.samples.length - 1}" value="${index}" step="1"><button id="next" aria-label="Next interval">→</button><button id="end">Jump to end</button></div><div id="state" class="state-grid"></div><div class="plots"><article><h3>Battery reserve</h3><div id="soc-chart"></div></article><article><h3>Body temperature</h3><div id="temperature-chart"></div></article></div><article class="power-plot"><h3>Available, requested and served power</h3><div id="power-chart"></div></article><p class="plot-note">The complete CSV provides exact values for every sampled interval; the slider below the controls selects one record without changing the experiment.</p></section><section class="panel"><div class="section-head"><div><p class="eyebrow">03 / ALLOCATION & ACCOUNTING</p><h2>No invented watts.</h2></div><span class="tag">HOUSEKEEPING → HEATER → SCIENCE</span></div><div id="allocation"></div><div class="audit"><div><p>Electrical residual / max absolute</p><strong>${display(r.totals.max_electric_residual_w, 9)} W</strong></div><div><p>Thermal residual / max absolute</p><strong>${display(r.totals.max_thermal_residual_w, 9)} W</strong></div><div><p>Outside configured temperature band</p><strong>${escape(r.totals.outside_limit_samples)} samples</strong></div></div><p>Residuals are bookkeeping checks of the stated equations (gate: 0.000001 W). Values shown are rounded. A balanced ledger is not evidence of real physical accuracy or safety. Temperature-band counts are sampled endpoints, not time outside limits.</p></section><section class="panel"><div class="section-head"><div><p class="eyebrow">04 / COMPARE EXPLICIT TRADE-OFFS</p><h2>Protect reserve. Count the science forgone.</h2></div><button id="pin">Pin current result</button></div><p>Pin a result, then change a policy or scenario. This is an in-memory comparison; different cases are not controlled policy experiments.</p><div id="comparison"></div></section><section class="panel"><p class="eyebrow">05 / REPRODUCIBLE EVIDENCE</p><h2>The assumptions travel with the output.</h2><p>Source: ${escape(r.provenance.source)}. ${escape(r.provenance.reference)}.</p><div class="downloads">${["json", "csv", "html", "input"].map((format) => `<a href="/api/report?${query}&format=${format}" download>${format === "input" ? "Input JSON" : format.toUpperCase() + " report"} ↓</a>`).join("")}</div><p class="digest">REPORT SHA-256<br>${escape(r.id)}</p><details><summary>Parameters, provenance and model limits</summary><pre>${escape(JSON.stringify(r.input.config, null, 2))}</pre><ul>${r.limitations.map((v) => `<li>${escape(v)}</li>`).join("")}</ul></details></section>`;
+  const service = document.createElement("section");
+  service.className = "panel";
+  service.id = "service-review";
+  const heading = document.createElement("h2");
+  heading.textContent = "Load service interruptions";
+  const note = document.createElement("p");
+  note.textContent =
+    "Full-run interval-average demand accounting, not continuous thermal safety. Intentional science shedding is excluded from unmet requested demand. An interruption at the window end is censored; recovery means the next modeled interval has no material deficit (1e−8 W threshold).";
+  service.append(heading, note);
+  for (const component of r.service.components) {
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `${component.name}: requested ${display(component.requested_wh, 5)} Wh · served ${display(component.served_wh, 5)} Wh · unserved ${display(component.unserved_wh, 5)} Wh · ${component.interruptions.length} interruptions`;
+    const intervals = document.createElement("p");
+    intervals.textContent =
+      component.interruptions
+        .map(
+          (item) =>
+            `[${item.start_s}, ${item.end_s}) s: ${display(item.energy_wh, 5)} Wh deficit, peak ${display(item.peak_w)} W, ${item.right_censored ? "end-censored" : "observed resumed service"}`,
+        )
+        .join("; ") || "No material interruption of requested service.";
+    details.append(summary, intervals);
+    service.append(details);
+  }
+  const shed = document.createElement("p");
+  shed.textContent = `Intentional science shedding: ${r.service.science_shedding.length} intervals; ${display(r.totals.science_shed_wh, 5)} Wh not requested under reserve policy. This is separate from power shortfall.`;
+  service.append(shed);
+  document.querySelector("#evidence")!.append(service);
   document.querySelector("#sample")!.addEventListener("input", (e) => {
     index = Number((e.target as HTMLInputElement).value);
     replay();

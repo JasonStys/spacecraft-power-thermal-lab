@@ -335,88 +335,88 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 18 | `variable RESOURCES` |
-| 19 | `variable SCENARIOS` |
-| 30 | `variable CHOICES` |
-| 31 | `variable LIMITATIONS` |
-| 41 | `definition Settings` |
-| 44 | `variable scenario` |
-| 45 | `variable battery` |
-| 46 | `variable policy` |
-| 47 | `variable step` |
-| 48 | `variable heater` |
-| 50 | `definition __post_init__` |
-| 50 | `parameter self` |
-| 54 | `variable key` |
-| 54 | `variable values` |
-| 59 | `definition fixture` |
-| 59 | `parameter scenario` |
-| 61 | `variable config` |
-| 62 | `variable profiles` |
-| 64 | `variable profiles` |
-| 66 | `variable profiles` |
-| 68 | `variable config` |
-| 69 | `variable profiles` |
-| 71 | `variable config` |
-| 72 | `variable profiles` |
-| 74 | `variable config` |
-| 75 | `variable profiles` |
-| 77 | `variable config` |
-| 78 | `variable profiles` |
-| 80 | `variable config` |
-| 90 | `variable profiles` |
-| 92 | `variable config` |
-| 93 | `variable profiles` |
-| 96 | `variable row` |
-| 99 | `definition canonical` |
-| 99 | `parameter value` |
-| 106 | `definition run_id` |
-| 106 | `parameter run` |
-| 109 | `variable key` |
-| 109 | `variable value` |
-| 113 | `definition catalog` |
-| 118 | `definition analyze` |
-| 118 | `parameter case` |
-| 118 | `parameter settings` |
-| 118 | `parameter source` |
-| 120 | `variable rows` |
-| 121 | `variable reference` |
-| 124 | `variable expected` |
-| 124 | `variable row` |
-| 125 | `variable key` |
-| 128 | `variable c` |
-| 129 | `variable previous_e` |
-| 129 | `variable previous_t` |
-| 130 | `variable electrical_error` |
-| 130 | `variable thermal_error` |
-| 131 | `variable row` |
-| 132 | `variable h` |
-| 133 | `variable electrical_error` |
-| 143 | `variable thermal_error` |
-| 151 | `variable previous_e` |
-| 151 | `variable previous_t` |
-| 154 | `variable totals` |
-| 157 | `variable r` |
+| 19 | `variable RESOURCES` |
+| 20 | `variable SCENARIOS` |
+| 31 | `variable CHOICES` |
+| 32 | `variable LIMITATIONS` |
+| 42 | `definition Settings` |
+| 45 | `variable scenario` |
+| 46 | `variable battery` |
+| 47 | `variable policy` |
+| 48 | `variable step` |
+| 49 | `variable heater` |
+| 51 | `definition __post_init__` |
+| 51 | `parameter self` |
+| 55 | `variable key` |
+| 55 | `variable values` |
+| 60 | `definition fixture` |
+| 60 | `parameter scenario` |
+| 62 | `variable config` |
+| 63 | `variable profiles` |
+| 65 | `variable profiles` |
+| 67 | `variable profiles` |
+| 69 | `variable config` |
+| 70 | `variable profiles` |
+| 72 | `variable config` |
+| 73 | `variable profiles` |
+| 75 | `variable config` |
+| 76 | `variable profiles` |
+| 78 | `variable config` |
+| 79 | `variable profiles` |
+| 81 | `variable config` |
+| 91 | `variable profiles` |
+| 93 | `variable config` |
+| 94 | `variable profiles` |
+| 97 | `variable row` |
+| 100 | `definition canonical` |
+| 100 | `parameter value` |
+| 107 | `definition run_id` |
+| 107 | `parameter run` |
+| 110 | `variable key` |
+| 110 | `variable value` |
+| 114 | `definition catalog` |
+| 119 | `definition analyze` |
+| 119 | `parameter case` |
+| 119 | `parameter settings` |
+| 119 | `parameter source` |
+| 121 | `variable rows` |
+| 122 | `variable reference` |
+| 125 | `variable expected` |
+| 125 | `variable row` |
+| 126 | `variable key` |
+| 129 | `variable c` |
+| 130 | `variable previous_e` |
+| 130 | `variable previous_t` |
+| 131 | `variable electrical_error` |
+| 131 | `variable thermal_error` |
+| 132 | `variable row` |
+| 133 | `variable h` |
+| 134 | `variable electrical_error` |
+| 144 | `variable thermal_error` |
+| 152 | `variable previous_e` |
+| 152 | `variable previous_t` |
+| 155 | `variable totals` |
 | 158 | `variable r` |
 | 159 | `variable r` |
-| 163 | `variable r` |
-| 166 | `variable key` |
-| 166 | `variable name` |
-| 176 | `variable row` |
-| 177 | `variable run` |
-| 189 | `variable key` |
-| 189 | `variable value` |
+| 160 | `variable r` |
+| 164 | `variable r` |
+| 167 | `variable key` |
+| 167 | `variable name` |
+| 177 | `variable row` |
+| 178 | `variable run` |
 | 190 | `variable key` |
-| 190 | `variable row` |
 | 190 | `variable value` |
-| 196 | `definition build_run` |
-| 196 | `parameter settings` |
-| 198 | `variable settings` |
-| 199 | `variable case` |
-| 200 | `variable case` |
-| 204 | `definition build_import` |
-| 204 | `parameter path` |
-| 204 | `parameter settings` |
+| 191 | `variable key` |
+| 191 | `variable row` |
+| 191 | `variable value` |
+| 198 | `definition build_run` |
+| 198 | `parameter settings` |
+| 200 | `variable settings` |
+| 201 | `variable case` |
+| 202 | `variable case` |
+| 206 | `definition build_import` |
+| 206 | `parameter path` |
+| 206 | `parameter settings` |
 
 ## powerlab/model.py
 
@@ -648,6 +648,31 @@ Line numbers refer to formatted source, not this generated document.
 | 156 | `parameter assets` |
 | 156 | `parameter port` |
 | 158 | `variable server` |
+
+## powerlab/service.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 12 | `definition service_ledger` |
+| 12 | `parameter config` |
+| 12 | `parameter rows` |
+| 18 | `variable result` |
+| 19 | `variable component` |
+| 20 | `variable demand_wh` |
+| 20 | `variable served_wh` |
+| 20 | `variable shortfall_wh` |
+| 21 | `variable active` |
+| 22 | `variable episodes` |
+| 23 | `variable row` |
+| 24 | `variable demand` |
+| 24 | `variable served` |
+| 33 | `variable deficit` |
+| 34 | `variable hours` |
+| 35 | `variable demand_wh` |
+| 36 | `variable served_wh` |
+| 37 | `variable shortfall_wh` |
+| 40 | `variable active` |
+| 53 | `variable active` |
 
 ## tests/test_engine.py
 
@@ -894,21 +919,43 @@ Line numbers refer to formatted source, not this generated document.
 | 194 | `variable tail` |
 | 205 | `variable controls` |
 
+## tests/test_service.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 14 | `definition sample` |
+| 15 | `parameter base` |
+| 15 | `parameter end` |
+| 15 | `parameter heater` |
+| 15 | `parameter science` |
+| 15 | `parameter shed` |
+| 30 | `definition test_manual_energy_recovery_and_end_censoring` |
+| 32 | `variable ledger` |
+| 35 | `variable base` |
+| 35 | `variable heater` |
+| 35 | `variable science` |
+| 52 | `definition test_all_native_cases_reconcile_component_shortfalls_and_shedding` |
+| 54 | `variable scenario` |
+| 55 | `variable run` |
+| 57 | `variable c` |
+| 62 | `variable e` |
+
 ## tests/ui.spec.ts
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 48 | `name` |
-| 49 | `href` |
-| 50 | `response` |
-| 94 | `response` |
-| 95 | `body` |
-| 111 | `size` |
-| 112 | `width` |
-| 113 | `scroll` |
-| 116 | `region` |
-| 117 | `name` |
-| 118 | `exact` |
+| 32 | `run` |
+| 68 | `name` |
+| 69 | `href` |
+| 70 | `response` |
+| 114 | `response` |
+| 115 | `body` |
+| 131 | `size` |
+| 132 | `width` |
+| 133 | `scroll` |
+| 136 | `region` |
+| 137 | `name` |
+| 138 | `exact` |
 
 ## tools/benchmark.py
 
@@ -1130,38 +1177,56 @@ Line numbers refer to formatted source, not this generated document.
 | 90 | `settings` |
 | 91 | `totals` |
 | 92 | `samples` |
-| 93 | `provenance` |
-| 94 | `limitations` |
-| 98 | `escape` |
-| 105 | `bounded` |
-| 111 | `display` |
-| 117 | `temperature` |
-| 121 | `parsePreferences` |
-| 123 | `v` |
-| 125 | `row` |
-| 132 | `key` |
-| 140 | `isReport` |
-| 142 | `r` |
-| 143 | `numeric` |
-| 179 | `Series` |
-| 180 | `label` |
-| 181 | `values` |
-| 182 | `className` |
-| 185 | `plot` |
-| 186 | `title` |
-| 187 | `times` |
-| 188 | `series` |
-| 189 | `unit` |
-| 190 | `cursor` |
-| 191 | `zeroBaseline` |
-| 193 | `values` |
-| 194 | `lo` |
-| 195 | `hi` |
-| 196 | `range` |
-| 197 | `end` |
-| 198 | `x` |
-| 199 | `y` |
-| 200 | `paths` |
+| 93 | `service` |
+| 94 | `components` |
+| 95 | `name` |
+| 96 | `requested_wh` |
+| 97 | `served_wh` |
+| 98 | `unserved_wh` |
+| 99 | `interruptions` |
+| 100 | `start_s` |
+| 101 | `end_s` |
+| 102 | `energy_wh` |
+| 103 | `peak_w` |
+| 104 | `right_censored` |
+| 107 | `science_shedding` |
+| 108 | `start_s` |
+| 109 | `end_s` |
+| 110 | `energy_wh` |
+| 111 | `peak_w` |
+| 112 | `right_censored` |
+| 115 | `provenance` |
+| 116 | `limitations` |
+| 120 | `escape` |
+| 127 | `bounded` |
+| 133 | `display` |
+| 139 | `temperature` |
+| 143 | `parsePreferences` |
+| 145 | `v` |
+| 147 | `row` |
+| 154 | `key` |
+| 162 | `isReport` |
+| 164 | `r` |
+| 165 | `numeric` |
+| 201 | `Series` |
+| 202 | `label` |
+| 203 | `values` |
+| 204 | `className` |
+| 207 | `plot` |
+| 208 | `title` |
+| 209 | `times` |
+| 210 | `series` |
+| 211 | `unit` |
+| 212 | `cursor` |
+| 213 | `zeroBaseline` |
+| 215 | `values` |
+| 216 | `lo` |
+| 217 | `hi` |
+| 218 | `range` |
+| 219 | `end` |
+| 220 | `x` |
+| 221 | `y` |
+| 222 | `paths` |
 
 ## web/env.d.ts
 
@@ -1240,28 +1305,36 @@ Line numbers refer to formatted source, not this generated document.
 | 125 | `state` |
 | 125 | `temperature-chart` |
 | 125 | `time-label` |
-| 127 | `index` |
-| 131 | `index` |
-| 135 | `index` |
-| 139 | `index` |
-| 143 | `celsius` |
-| 148 | `pinned` |
-| 156 | `replay` |
-| 158 | `r` |
-| 159 | `s` |
-| 160 | `c` |
-| 167 | `times` |
-| 173 | `label` |
-| 174 | `className` |
-| 175 | `values` |
-| 186 | `label` |
-| 187 | `className` |
-| 188 | `values` |
-| 194 | `celsius` |
-| 209 | `entries` |
-| 228 | `compare` |
-| 247 | `remember` |
-| 255 | `load` |
+| 126 | `service` |
+| 129 | `heading` |
+| 131 | `note` |
+| 135 | `component` |
+| 136 | `details` |
+| 137 | `summary` |
+| 139 | `intervals` |
+| 150 | `shed` |
+| 155 | `index` |
+| 159 | `index` |
+| 163 | `index` |
+| 167 | `index` |
+| 171 | `celsius` |
+| 176 | `pinned` |
+| 184 | `replay` |
+| 186 | `r` |
+| 187 | `s` |
+| 188 | `c` |
+| 195 | `times` |
+| 201 | `label` |
+| 202 | `className` |
+| 203 | `values` |
+| 214 | `label` |
+| 215 | `className` |
+| 216 | `values` |
+| 222 | `celsius` |
+| 237 | `entries` |
+| 256 | `compare` |
+| 275 | `remember` |
+| 283 | `load` |
 
 ## web/style.css
 

@@ -2,6 +2,8 @@
 
 **Every watt becomes a trade-off.** An offline scientific-computing workbench by [Jason Stys](https://github.com/JasonStys).
 
+Review [per-load service interruptions](docs/LOAD_SERVICE.md): requested/served/unserved Wh, exact deficit intervals and observed recovery versus end censoring. Housekeeping, heater and science shortfall stay separate from deliberate reserve-policy science shedding.
+
 Explore a fictional spacecraft's solar generation, battery reserve, electrical-load priorities and thermal response through imposed light/dark profiles. A **C++20** worker computes bounded power allocation and a single-node RK4 thermal model. An independently structured **Python** implementation checks **every numerical sample**, then separately audits the electrical and thermal energy ledgers. **TypeScript, HTML, CSS and SVG** provide an accessible replay; **SQL/SQLite** provides optional local immutable evidence history.
 
 All spacecraft parameters and environmental profiles are invented. This is **educational numerical verification, not measured telemetry, orbital eclipse prediction, validated battery design, hardware control or flight-qualified analysis**. Read the [model and limits](docs/MODEL.md) before interpreting results.

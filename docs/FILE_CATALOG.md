@@ -16,6 +16,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `SECURITY.md` — # Security policy
 - `docs/API.md` — # Strict input and interface contracts
 - `docs/ARCHITECTURE.md` — # Architecture and trade-offs
+- `docs/LOAD_SERVICE.md` — # Review load service
 - `docs/MODEL.md` — # Model, units and interpretation
 - `docs/RELEASE.md` — # Release and operations runbook
 - `docs/THIRD_PARTY.md` — # Notices and scientific references
@@ -23,6 +24,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/VALIDATION.md` — # Validation and evidence
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
 - `docs/images/workbench.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Per-load service validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed numerical metric contracts, tolerance checked across compilers/platforms.
 - `examples/illumination.json` — Editable strict synthetic SI environment and spacecraft parameter profile.
 - `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
@@ -43,6 +45,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `powerlab/reports.py` — """Deterministic inert reports and opt-in immutable SQLite history by Jason Stys.
 - `powerlab/resources/history.sql` — -- Immutable local simulation history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
 - `powerlab/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
+- `powerlab/service.py` — """Per-load service interruption evidence by Jason Stys.
 - `pyproject.toml` — Python metadata, supported runtimes, strict lint/type/test and coverage gates.
 - `requirements-dev.in` — Scientific test, type, style, audit and packaging dependency inputs.
 - `requirements-dev.lock` — Universal pinned development/build graph with distribution hashes.
@@ -51,6 +54,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_engine.py` — """Cross-language, analytic, conservation and policy tests by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_model.py` — """Strict numeric envelopes and worker failure boundaries by Jason Stys.
+- `tests/test_service.py` — """Independent per-load watt-hour and interruption examples by Jason Stys.
 - `tests/ui.spec.ts` — /** Actual native/service/browser acceptance by Jason Stys; test/variable lines: docs/CODE_INDEX.md.
 - `tools/benchmark.py` — """Reviewed numerical contracts and descriptive runtime observations by Jason Stys.
 - `tools/build_native.py` — """Cross-platform C++ build/test orchestration by Jason Stys.
