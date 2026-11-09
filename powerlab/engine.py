@@ -14,6 +14,7 @@ from typing import Any
 from powerlab.model import Case, Config, Segment, load_case, parse_case, wire
 from powerlab.native import invoke
 from powerlab.reference import KEYS, simulate
+from powerlab.service import service_ledger
 
 RESOURCES = Path(__file__).parent / "resources"
 SCENARIOS = {
@@ -188,6 +189,7 @@ def analyze(case: Case, settings: Settings, source: str) -> dict[str, Any]:
         "limitations": LIMITATIONS,
         "totals": {key: round(value, 9) for key, value in totals.items()},
         "samples": [{key: round(value, 9) for key, value in row.items()} for row in rows],
+        "service": service_ledger(rows, c),
     }
     run["id"] = run_id(run)
     return run
