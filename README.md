@@ -23,10 +23,10 @@ All spacecraft parameters and environmental profiles are invented. This is **edu
 
 ## Run a portable desktop bundle
 
-Use [Releases](https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/latest). Download the ZIP for your OS/architecture and its `.sha256` file, verify the digest, and extract the **entire** `SpacecraftPowerThermalLab` folder. Keep `_internal` and license files intact; don't launch from inside the ZIP.
+Use the [v1.1.0 release](https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/tag/v1.1.0). Download the Windows x64 ZIP or Linux x64/macOS arm64 `.tar.gz` archive and its matching `.sha256` file. Verify the digest and extract the **entire** `SpacecraftPowerThermalLab` folder, preserving `_internal`, licenses, POSIX links and executable permissions. Launch from the extracted folder, not from inside the archive.
 
 - Windows x64: open `SpacecraftPowerThermalLab.exe`.
-- Linux x64: run `./SpacecraftPowerThermalLab`; restore executable permission with `chmod +x` if ZIP extraction did not preserve it.
+- Linux x64: run `./SpacecraftPowerThermalLab`.
 - macOS arm64: run `./SpacecraftPowerThermalLab` from Terminal.
 
 The executable opens your normal browser on an ephemeral `127.0.0.1` port. Keep its console running; Ctrl+C stops it. No Python/Node/compiler installation, administrator rights, account or cloud connection is needed for the bundled app. These are **unsigned/unnotarized portable desktop applications**, not mobile installers or public hosted services. Do not bypass OS security warnings; inspect/build source if your policy disallows unsigned software.
@@ -105,6 +105,12 @@ For contributions, reproduce an issue with a synthetic case, add the relevant bo
 
 Created by **Jason Stys**. [Portfolio/contact profile](https://github.com/JasonStys) · [Project help/issues](https://github.com/JasonStys/spacecraft-power-thermal-lab/issues). MIT project source. No agency, employer or mission affiliation/endorsement.
 
-## Current portable release preparation
+## Current portable release
 
 Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) · [validation-review.docx](docs/reports/validation-review.docx) · [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
