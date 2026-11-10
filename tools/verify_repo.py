@@ -10,6 +10,11 @@ import re
 import subprocess
 from pathlib import Path
 
+if __package__:
+    from .publication_text import public_text
+else:
+    from publication_text import public_text
+
 ROOT = Path(__file__).resolve().parents[1]
 SKIP = {
     ".git",
@@ -32,6 +37,12 @@ SKIP = {
 }
 SOURCE_SUFFIXES = {".mjs", ".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp"}
 FILE_PURPOSES = {
+    "docs/reports/project-guide.docx": "Reviewed Word guide to this exact source revision and practical scope.",
+    "docs/reports/validation-review.docx": "Reviewed Word validation observations with explicit test and analysis limits.",
+    "docs/reports/validation-evidence.xlsx": "Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.",
+    "docs/reports/publications.json": "Exact reviewed Office identities, page/tab scopes and immutable source baseline.",
+    "docs/handbook.md": "Documentation entry point, edition boundaries and reproducible usage/design/security/test references.",
+    "docs/reports/documentation-refresh-2026-11-09.md": "Observed documentation integration checks, reviewed bytes and future CI boundary.",
     "examples/illumination.json": "Editable strict synthetic SI environment and spacecraft parameter profile.",
     "docs/reports/benchmark.json": "Reviewed numerical metric contracts, tolerance checked across compilers/platforms.",
     "CMakeLists.txt": "C++20 warning-as-error, test, sanitizer, coverage and static Windows runtime targets.",
@@ -118,7 +129,7 @@ def inventory() -> tuple[str, str]:
         content = (
             "Binary screenshot asset from local application validation"
             if path.suffix in {".jpg", ".png"}
-            else path.read_text(encoding="utf-8")
+            else public_text(path, ROOT)
         )
         summary = content.splitlines()[0][:150] if content.splitlines() else "Empty file"
         summary = FILE_PURPOSES.get(relative, summary)

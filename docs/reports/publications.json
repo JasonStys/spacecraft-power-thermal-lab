@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "project": "spacecraft-power-thermal-lab",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+  "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+  "functionalEvidenceBaseline": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42752167983,
+      "event": "push",
+      "headSha": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752167983"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42752168111,
+      "event": "push",
+      "headSha": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "name": "Validation",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752168111"
+    }
+  ],
+  "summary": "The released 1.1.0 HELIO portable app includes per-load service review: inspect requested and delivered energy, grouped shortfalls with censored boundaries, and deliberately shed science demand separately.",
+  "rationale": "The C++ numerical model and independent Python energy/reference checks remain intact. The actual extracted UI is tested against an independent 6 W minus 3.2 W over 600 seconds energy calculation, component-to-total reconciliation and an exact JSON download. Product-version identity and preserved native notices make the practical analysis available in a reviewable portable bundle.",
+  "limitations": [
+    "Fictional single-body/battery model; numerical agreement and balanced energy do not validate real batteries or establish spacecraft safety.",
+    "No live hardware, power control or operational thermal assurance.",
+    "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 72652,
+      "sha256": "362bc893cb3dd0f503c5c5d7c799e962200d0489f87e7940e2d1d9bc6c22f059",
+      "sourceBaseline": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 5,
+        "renderedPageSha256": {
+          "page-1.png": "e73b9ad4fa632a6b24ea48051b0db811223a430c0954a16f0863992a97cd6588",
+          "page-2.png": "95b5e172e73e998c3e195f5fa2e3fbe6b5d942ba568718dd17414805cae3dc03",
+          "page-3.png": "11b00093a2ec14250b19a04ea34b9c8203fd2333b8e58f9c3d255cb5f5fe2415",
+          "page-4.png": "e4c17b15f6d117efd48be1044ea60be31e2870dbc8f8245b39e57705c97f19f2",
+          "page-5.png": "68fb6bdf60938b71eeed3272efc49c529d58d53df1885efe2468ebe6bdb82f00"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 42062,
+      "sha256": "5c531f1d73cf21c572bf4f47a1fcb98391c673263ab12ba83e1c50ebbcbf10c5",
+      "sourceBaseline": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 3,
+        "renderedPageSha256": {
+          "page-1.png": "43f94e9c666d5f1820411e2f05cb472f0ff36c9d26c197b16c8e446dc4054b9b",
+          "page-2.png": "94eb36fad48c3af9fa8e10c48177b75a99aaf11aa1b5e562fcea3b9e5f137e32",
+          "page-3.png": "8b64687eb3420f80694e6c18b6160f84c515db37dd5fb24f2919b35339d88d85"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7396,
+      "sha256": "38af8d179e953d9a3aafab890230a6178ed6b247667ecb9cc91705317a076c5c",
+      "sourceBaseline": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": ["Workflow evidence", "Test sources"],
+        "previewSha256": {
+          "workflow-evidence.png": "bb6f2a128b3760a61f552018dc3388435c2875c6a81b4e895f53ac48243894c2",
+          "test-sources.png": "a2699fa9c665f763fe39d5f34ca5c3c62d558905bd6eb753d892957328d2c4d2"
+        },
+        "tables": [
+          {
+            "name": "WorkflowEvidence",
+            "range": "A7:D9",
+            "autoFilter": true
+          },
+          {
+            "name": "TestSources",
+            "range": "A7:C18",
+            "autoFilter": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": 0
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}
