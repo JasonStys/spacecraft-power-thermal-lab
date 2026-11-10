@@ -48,7 +48,7 @@ jobs:
       - run: npm run build
       - run: python tools/build_native.py
       - name: Install Chromium for actual extracted-app UI acceptance
-        timeout-minutes: 25
+        timeout-minutes: 15
         run: npx playwright install --with-deps chromium
       - run: python tools/package_app.py
       - name: Upload verified bundle to draft release (not Actions artifacts)
