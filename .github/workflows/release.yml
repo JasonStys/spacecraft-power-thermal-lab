@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with: { persist-credentials: false }
+        with: { persist-credentials: false, ref: "${{ github.sha }}" }
       - name: Require passing checks and a safe new version
         env:
           GH_TOKEN: ${{ github.token }}
@@ -31,14 +31,14 @@ jobs:
     needs: prepare
     runs-on: ${{ matrix.os }}
     permissions: { contents: write }
-    timeout-minutes: 20
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with: { persist-credentials: false }
+        with: { persist-credentials: false, ref: "${{ github.sha }}" }
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with: { python-version: "3.14" }
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -47,6 +47,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: python tools/build_native.py
+      - name: Install Chromium for actual extracted-app UI acceptance
+        timeout-minutes: 25
+        run: npx playwright install --with-deps chromium
       - run: python tools/package_app.py
       - name: Upload verified bundle to draft release (not Actions artifacts)
         env:

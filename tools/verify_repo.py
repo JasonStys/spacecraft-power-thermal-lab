@@ -30,7 +30,7 @@ SKIP = {
     "test-results",
     "playwright-report",
 }
-SOURCE_SUFFIXES = {".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp"}
+SOURCE_SUFFIXES = {".mjs", ".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp"}
 FILE_PURPOSES = {
     "examples/illumination.json": "Editable strict synthetic SI environment and spacecraft parameter profile.",
     "docs/reports/benchmark.json": "Reviewed numerical metric contracts, tolerance checked across compilers/platforms.",

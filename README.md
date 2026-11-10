@@ -104,3 +104,7 @@ Every source file has a responsibility/creator header and definition contracts. 
 For contributions, reproduce an issue with a synthetic case, add the relevant boundary/regression test, update model documentation and inventory, and run the checks above. Don't commit personal data, keys, histories or generated applications. New physical claims require independent validation evidence, not merely updated snapshots.
 
 Created by **Jason Stys**. [Portfolio/contact profile](https://github.com/JasonStys) · [Project help/issues](https://github.com/JasonStys/spacecraft-power-thermal-lab/issues). MIT project source. No agency, employer or mission affiliation/endorsement.
+
+## Current portable release preparation
+
+Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.
