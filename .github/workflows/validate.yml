@@ -62,7 +62,7 @@ jobs:
   native:
     name: Portable app / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 20
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
@@ -78,6 +78,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: python tools/build_native.py
+      - name: Install Chromium for actual extracted-app UI acceptance
+        timeout-minutes: 15
+        run: npx playwright install --with-deps chromium
       - run: python tools/package_app.py
   sanitizers:
     name: C++ / Clang AddressSanitizer + UndefinedBehaviorSanitizer

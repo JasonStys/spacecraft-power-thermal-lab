@@ -281,3 +281,8 @@ document.querySelector("#remember")!.addEventListener("change", (e) => {
   }
 });
 void load();
+// Use the HTML product-version surface checked against Python/npm by the release contract.
+const releaseVersion = document.querySelector<HTMLMetaElement>(
+  'meta[name="application-version"]',
+)!.content;
+document.querySelector("footer")!.append(document.createTextNode(` · ${releaseVersion}`));
