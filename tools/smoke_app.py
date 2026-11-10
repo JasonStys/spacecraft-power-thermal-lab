@@ -1,6 +1,6 @@
 """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
 
-Functions: main, checked_run. Variables: owned child, random instance marker and temporary exports.
+Functions/classes: main, RefuseRedirects. Variables: owned child, random instance marker and temporary exports.
 Exact lines: docs/CODE_INDEX.md. No retries, source fallback, account or user-server reuse.
 """
 

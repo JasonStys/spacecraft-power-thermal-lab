@@ -42,6 +42,26 @@ def run_record(workflow):
     }
 
 
+def draft_record(**changes):
+    """Independently authored authenticated draft list/detail shape, including untagged HTML URL."""
+    identifier = 439911956
+    base = f"repos/{REPOSITORY}/releases/{identifier}"
+    value = {
+        "id": identifier,
+        "tag_name": "v1.1.0",
+        "draft": True,
+        "prerelease": False,
+        "target_commitish": SOURCE,
+        "url": "https://api.github.com/" + base,
+        "assets_url": "https://api.github.com/" + base + "/assets",
+        "upload_url": "https://uploads.github.com/" + base + "/assets{?name,label}",
+        "html_url": "https://github.com/" + REPOSITORY + "/releases/tag/untagged-fixture",
+        "assets": [],
+    }
+    value.update(changes)
+    return value
+
+
 @pytest.fixture
 def context(monkeypatch):
     """An isolated authorized release context without inspecting environment credentials."""
@@ -81,6 +101,7 @@ def test_native_http_probe_refuses_redirects_before_following():
         "dynamic-runtime",
         "duplicate-workflow",
         "package-escape",
+        "cmake-mismatch",
     ],
 )
 def test_configuration_refuses_incoherent_or_unsafe_version_sources(tmp_path, monkeypatch, kind):
@@ -105,6 +126,8 @@ def test_configuration_refuses_incoherent_or_unsafe_version_sources(tmp_path, mo
     (tmp_path / "package.json").write_text(json.dumps(npm))
     (tmp_path / "example").mkdir()
     (tmp_path / "example/__init__.py").write_text(runtime)
+    if kind == "cmake-mismatch":
+        (tmp_path / "CMakeLists.txt").write_text("project(Example VERSION 1.0.0 LANGUAGES CXX)\n")
     monkeypatch.setattr(release, "ROOT", tmp_path)
     with pytest.raises(ValueError):
         release.configuration()
@@ -228,7 +251,8 @@ def test_prepare_never_retargets_or_reuses_an_existing_version(context, monkeypa
         """Explicit occupied tag or release responses; no process may mutate them."""
         if "/git/ref/tags/" in endpoint:
             return {"object": {"sha": SOURCE}} if existing == "tag" else None
-        return {"draft": existing == "old-draft", "target_commitish": "b" * 40}
+        info = draft_record(draft=existing == "old-draft", target_commitish="b" * 40)
+        return [info] if "/releases?" in endpoint else info
 
     monkeypatch.setattr(release, "gh_json", response)
 
@@ -244,7 +268,9 @@ def test_prepare_never_retargets_or_reuses_an_existing_version(context, monkeypa
 def test_prepare_creates_only_exact_version_source_draft(context, monkeypatch):
     """Literal arguments bind the new draft to reviewed SHA without publishing flags."""
     monkeypatch.setattr(release, "require_checks", lambda *args: None)
-    monkeypatch.setattr(release, "gh_json", lambda *args, **kwargs: None)
+    monkeypatch.setattr(
+        release, "gh_json", lambda endpoint, **kwargs: [] if "/releases?" in endpoint else None
+    )
     calls = []
     monkeypatch.setattr(subprocess, "run", lambda argv, **kwargs: calls.append(argv))
     release.prepare()
@@ -268,7 +294,7 @@ def test_prepare_requires_prerequisites_before_creating(context, monkeypatch, co
             run = run_record(workflow)
             run["conclusion"] = conclusion
             return {"total_count": 1, "workflow_runs": [run]}
-        return None
+        return [] if "/releases?" in endpoint else None
 
     monkeypatch.setattr(release, "gh_json", response)
     monkeypatch.setattr(subprocess, "run", lambda argv, **kwargs: writes.append(argv))
@@ -300,9 +326,13 @@ def upload_fixture(context, tmp_path, monkeypatch):
     archives.create_archive(bundle, archive)
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     checksum.write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
-    info = {"draft": True, "tag_name": "v1.1.0", "target_commitish": SOURCE, "assets": []}
+    info = draft_record()
     monkeypatch.setattr(
-        release, "gh_json", lambda endpoint, **kwargs: None if "/git/ref/" in endpoint else info
+        release,
+        "gh_json",
+        lambda endpoint, **kwargs: (
+            None if "/git/ref/" in endpoint else [info] if "/releases?" in endpoint else info
+        ),
     )
     calls = []
     monkeypatch.setattr(subprocess, "run", lambda argv, **kwargs: calls.append(argv))
