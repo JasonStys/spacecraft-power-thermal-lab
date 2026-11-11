@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "repository": "spacecraft-power-thermal-lab",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+  "createdAt": "2026-11-10T23:54:40.941Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide.docx",
+  "sha256": "cc73421cf1fd1537c9e2060777c7ecd5382b25dfa1761a2f5b1e7055803b4a23",
+  "screenshots": [
+    {
+      "file": "01-heater-contention.png",
+      "sha256": "49dc7303861019cde21e0b559726441bf81a317337f6c27823fd8912d948e944",
+      "width": 1286,
+      "height": 398,
+      "caption": "Actual installed application showing heater service shortfall. Captured during the accepted native user journey with prepared synthetic inputs."
+    },
+    {
+      "file": "02-reserve-science-shedding.png",
+      "sha256": "e384009b90135f97d0e6e8f7038b94654805bff9ba28499a84fee0aebe3e26ca",
+      "width": 1286,
+      "height": 349,
+      "caption": "Actual installed application showing extended eclipse reserve policy. Captured during the accepted native user journey with prepared synthetic inputs."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "powerlab/service.py",
+      "first": 23,
+      "last": 49,
+      "sha256": "234567642a75dd245485003dbfe8a210b9c52de951d6d3f7f956960d12fae9bf",
+      "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96/powerlab/service.py#L23"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Published package",
+      "observed": "Exact public release, provider/sidecar hashes and installed resources verified; installed bytes unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Actual native core",
+      "observed": "The existing packaged CLI/API and native feature acceptance helper passed on the installed executable.",
+      "result": "Passed"
+    },
+    {
+      "name": "Scenario evidence",
+      "observed": "The service ledger distinguished heater shortfall from reserve-driven science shedding, preserving exact accounting, original run identity and censored interval labels.",
+      "result": "Passed"
+    },
+    {
+      "name": "UI and cleanup",
+      "observed": "Actual compiled-application browser journey passed. Both images were individually inspected; cleanup left no owned child process.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "pageCount": 4,
+    "reviewedAt": "2026-11-11T01:39:08.110015+00:00",
+    "reviewers": ["root"],
+    "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
+    "pageSHA256": {
+      "1": "3be7745b93f38e71fda41653e42450ce530c7da5129ee6057024f6ac1afca562",
+      "2": "c1fb1312125eed5a9ca35c4deabe30d928285d27a1c2e8ffbc40fe3c6afcbe9e",
+      "3": "f4b7529376e7d1b9a85b0177684a3d06413da6f10dba63ec90952e7534168677",
+      "4": "976b09f3eefcdf4382bf395e13a02073fc4ea2876494d02323366d9347982da0"
+    },
+    "ooxmlSchema": "passed",
+    "issues": []
+  }
+}
